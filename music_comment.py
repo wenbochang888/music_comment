@@ -27,7 +27,8 @@ def comment(url):
     except Exception as e:
         print("出问题了 不过不用担心")
 
-# 薛之谦的热门歌曲30首
+# 同样可以使用陈奕迅 http://music.163.com/#/artist?id=2116 等一波人的
+# 薛之谦的热门歌曲
 url = "http://music.163.com/#/artist?id=5781"
 driver = webdriver.PhantomJS()
 driver.get(url)
@@ -37,7 +38,7 @@ html = driver.page_source
 bsObj = BeautifulSoup(html, 'html.parser')
 dataList = bsObj.findAll(name = 'a', attrs = {'href':re.compile(r'/song.id=\d{1,10}')})
 for data in dataList:
-    print(data.string + "   http://music.163.com/#"+data.attrs['href'])
+    print(data.string + "   http://music.163.com/#"+data.attrs['href'] + '\n')
     comment("http://music.163.com/#"+data.attrs['href'])
 
 
