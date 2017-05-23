@@ -4,7 +4,7 @@
 
 利用技术 seleium+PhantomJS 也可以用seleium+FireFox 
 
-网易云采取了框架，driver.switch_to.frame(driver.find_element_by_name("contentFrame"))
+网易云采取了框架，所以必须要driver.switch_to.frame(driver.find_element_by_name("contentFrame"))
 
 暂时只想到了模拟真实浏览器的行为。尝试解析post数据，发觉有两个js加密
 
